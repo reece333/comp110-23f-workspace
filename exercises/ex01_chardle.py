@@ -1,4 +1,4 @@
-"""EX01 - Chardle"""
+"""EX01 - Chardle."""
 __author__ = "730564969"
 
 guess: str = input("Enter a 5-character word: ")
@@ -12,20 +12,20 @@ if len(character) != 1:
 instances: int = 0
 
 print("Searching for " + character + " in " + guess)
-if character == guess[0] :
-    print(character + " found in index 0")
+if character == guess[0]:
+    print(character + " found at index 0")
     instances = instances + 1
 if character == guess[1]:
-    print(character + " found in index 1")
+    print(character + " found at index 1")
     instances = instances + 1
 if character == guess[2]:
-    print(character + " found in index 2")
+    print(character + " found at index 2")
     instances = instances + 1
 if character == guess[3]:
-    print(character + " found in index 3")
+    print(character + " found at index 3")
     instances = instances + 1
 if character == guess[4]:
-    print(character + " found in index 4")
+    print(character + " found at index 4")
     instances = instances + 1
 
 if instances == 0:
