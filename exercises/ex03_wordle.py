@@ -1,7 +1,9 @@
 """Wordle."""
 __author__ = "730564969"
 
+
 def contains_char(search_str: str, target_char: str) -> bool:
+    """Checks if single character is at any index of the string."""
     # Assert that target_char is a single character
     assert len(target_char) == 1
     # Initialize index
@@ -16,7 +18,9 @@ def contains_char(search_str: str, target_char: str) -> bool:
     # Didn't find the target_char, return False
     return False
 
+
 def emojified(guess_str: str, secret_str: str) -> str:
+    """Create codified emoji string based on guess and secret."""
     # Define emoji characters
     GREEN_BOX = "🟩"
     YELLOW_BOX = "🟨"
@@ -40,7 +44,9 @@ def emojified(guess_str: str, secret_str: str) -> str:
         index += 1
     return emoji_str
 
+
 def input_guess(expected_length: int) -> str:
+    """Ensure user provides a guess of the expected length."""
     while True:
         user_input = input("Enter a " + str(expected_length) + " character word: ")
         if len(user_input) == expected_length:
@@ -48,13 +54,14 @@ def input_guess(expected_length: int) -> str:
         else:
             print("That wasn't " + str(expected_length) + " chars! Try again: ")
 
+
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     secret_word = "codes"
     max_turns = 6
     turn = 1
     while turn <= max_turns:
-        print("=== Turn " +  str(turn) + "/" + str(max_turns) + " ===")
+        print("=== Turn " + str(turn) + "/" + str(max_turns) + " ===")
         # Prompt user for a guess
         user_guess = input_guess(len(secret_word))
         # Get emoji results of user's guess versus secret
@@ -63,7 +70,7 @@ def main() -> None:
         print(emoji_result)
         # Check if user's guess is correct
         if user_guess == secret_word:
-            print("You won in " +  str(turn) + "/" + str(max_turns) + " turns!")
+            print("You won in " + str(turn) + "/" + str(max_turns) + " turns!")
             return
         # Move on to next turn
         turn += 1
