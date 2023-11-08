@@ -61,7 +61,10 @@ def alphabetizer(words: list[str]) -> dict[str, list[str]]:
 def update_attendance(attendance: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
     """Create a dictionary containing days of the week as keys and list of present students as values"""
     if day in attendance:
-        attendance[day].append(student)
+        if student not in attendance[day]:
+            attendance[day].append(student)
+        else:
+            print(f"{student} is already marked as present on {day}.")
     else:
         attendance[day] = [student]
 
